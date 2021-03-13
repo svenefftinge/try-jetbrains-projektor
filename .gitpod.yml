@@ -1,0 +1,12 @@
+ports:
+  - port: 8887
+    onOpen: notify
+tasks:
+  - before: |
+      sudo docker-up &
+  - before: |
+      sleep 5
+    init: |
+      docker pull registry.jetbrains.team/p/prj/containers/projector-idea-c
+    command: |
+      docker run --rm -p 8887:8887 -it registry.jetbrains.team/p/prj/containers/projector-idea-c
