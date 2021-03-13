@@ -5,7 +5,7 @@ tasks:
   - before: |
       sudo docker-up &
   - before: |
-      sleep 5
+      sleep 10
     init: |
       docker pull registry.jetbrains.team/p/prj/containers/projector-idea-c
     command: |
